@@ -1,0 +1,21 @@
+          <reservation uuid="2a41f1d1-d2ee-444c-acde-e6f1bdb0d3b8">
+            <subnet>7046c7cb-a9fb-4a50-8a49-3b6e77d42809</subnet>
+            <ip_address>192.168.1.100</ip_address>
+            <hw_address>a1:b1:c1:d1:e1:f1</hw_address>
+            <hostname>DAD-DESKTOP</hostname>
+            <description>DAD-DESKTOP</description>
+          </reservation>
+          <reservation uuid="f8e9a889-38ce-4714-b11a-8990d5dfc992">
+            <subnet>7046c7cb-a9fb-4a50-8a49-3b6e77d42809</subnet>
+            <ip_address>192.168.1.101</ip_address>
+            <hw_address>a2:b2:c2:d2:e2:f2</hw_address>
+            <hostname>MOM-DESKTOP</hostname>
+            <description>MOM-DESKTOP</description>
+          </reservation>
+          <reservation uuid="f9a3cd82-a1ac-4da8-8c98-649747208af3">
+            <subnet>7046c7cb-a9fb-4a50-8a49-3b6e77d42809</subnet>
+            <ip_address>192.168.1.102</ip_address>
+            <hw_address>a3:b3:c3:d3:e3:f3</hw_address>
+            <hostname>Wendy-DESKTOP</hostname>
+            <description>Wendy-DESKTOP</description>
+          </reservation>
