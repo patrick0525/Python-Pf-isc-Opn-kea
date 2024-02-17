@@ -82,5 +82,33 @@
         "filename32arm": null,
         "filename64arm": null,
         "numberoptions": null
+    },
+    {
+        "mac": "a4:b4:c4:d4:e4:f4",
+        "cid": null,
+        "ipaddr": "192.168.1.103",
+        "hostname": null,
+        "descr": null,
+        "filename": null,
+        "rootpath": null,
+        "defaultleasetime": null,
+        "maxleasetime": null,
+        "gateway": null,
+        "domain": null,
+        "domainsearchlist": null,
+        "ddnsdomain": null,
+        "ddnsdomainprimary": null,
+        "ddnsdomainsecondary": null,
+        "ddnsdomainkeyname": null,
+        "ddnsdomainkeyalgorithm": "hmac-md5",
+        "ddnsdomainkey": null,
+        "tftp": null,
+        "ldap": null,
+        "nextserver": null,
+        "filename32": null,
+        "filename64": null,
+        "filename32arm": null,
+        "filename64arm": null,
+        "numberoptions": null
     }
 ]

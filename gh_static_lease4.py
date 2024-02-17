@@ -116,14 +116,18 @@ def json_to_opnsense_xml(path,input,output):
         output_file.writelines(f"{'':>12}{str5}{my_dict['mac']}{str5a}")
     
         if (my_dict['hostname']== null):
-            output_file.writelines(f"{'':>12}{str6}{str6a}")
+            # end
+            output_file.writelines(f"{'':>12}<hostname/>\n")
         else:
-            output_file.writelines(f"{'':>12}{str6}{my_dict['hostname']}{str6a}")
-    
-        if (my_dict['descr']== null):  
-            output_file.writelines(f"{'':>12}{str7}{'EMPTY'}{str7a}")  
+            # add info
+            output_file.writelines(f"{'':>12}{str6}{my_dict['hostname']}</hostname>\n")
+        # description
+        if (my_dict['descr']== null):
+            # end    
+            output_file.writelines(f"{'':>12}<description/>\n")  
         else:
-            output_file.writelines(f"{'':>12}{str7}{my_dict['descr']}{str7a}")
+            # add info
+            output_file.writelines(f"{'':>12}{str7}{my_dict['descr']}</description>\n")
         
         output_file.writelines(f"{'':>10}{str8}")
     

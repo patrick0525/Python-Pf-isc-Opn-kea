@@ -83,4 +83,32 @@
 		<filename64arm/>
 		<numberoptions/>
 	</staticmap>
+	<staticmap>
+		<mac>a4:b4:c4:d4:e4:f4</mac>
+		<cid/>
+		<ipaddr>192.168.1.103</ipaddr>
+		<hostname></hostname>
+		<descr></descr>
+		<filename/>
+		<rootpath/>
+		<defaultleasetime/>
+		<maxleasetime/>
+		<gateway/>
+		<domain/>
+		<domainsearchlist/>
+		<ddnsdomain/>
+		<ddnsdomainprimary/>
+		<ddnsdomainsecondary/>
+		<ddnsdomainkeyname/>
+		<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+		<ddnsdomainkey/>
+		<tftp/>
+		<ldap/>
+		<nextserver/>
+		<filename32/>
+		<filename64/>
+		<filename32arm/>
+		<filename64arm/>
+		<numberoptions/>
+	</staticmap>
 </dhcp>
