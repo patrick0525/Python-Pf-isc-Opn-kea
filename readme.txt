@@ -1,18 +1,33 @@
+12:27PM
 Problem Statement: 
-Choosing the new kea-dhcp feature in opnsense 24.1 does not automatically convert
-the isc-dhcp static leases to kea-dhcp. The intetened output is used to patch an existing opnsense kea-dhcp 
-with one static lease device.
+Choosing the new kea-dhcp feature in opnsense 24.1 does not automatically migrate 
+the isc-dhcp static leases information to kea-dhcp. The intent of the python script 
+is to patch an existing opnsense config already Gui configured with one existing kea-dhcp
+static lease device. Re-use of the identified <subnet> uuid is required 
+in gh_static_lease4.py to create the reservations. 
+Hopefully users will find it useful and prevent manual Gui data entry.
 
-Currently,I have not moved my pfsense isc-dhcp leases to opnsense isc-dhcp. I was dreading how
-I would manually enter all 40+ devices: ip, mac address, hostname and desription.
-Below is how I solved this migration dilemma to opnsense.
+My Use Case:
+Currently, I have not moved my pfsense isc-dhcp static leases information
+to opnsense isc-dhcp. I have been dreading how I would manually enter all 
+40+ devices: ip, mac address, hostname and description. Below is how I solved this
+migration dilemma to opnsense.
 
+Prerequisites:
+Python Code developed on a Windons and tested on W11 directories. (Python 3.12)
+Basic Python knowledge
+Optional: Notepad ++
+
+
+Overview of Processing:
 This python script converts a small section of the pfsense config: isc-dhcp static lease(.xml)
-into an opnsense kea-dhcp static lease(.xml) format. A sample gh_pfsense_isc_dhcp_data.xml is provided as a template
-to add your pfsense isc-dhcp clients. The input  xml  will be coverted into a json array of static release objects 
+into an opnsense kea-dhcp static lease(.xml)format. A sample gh_pfsense_isc_dhcp_data.xml 
+is provided as a template and available to add your pfsense isc-dhcp clients. 
+The input .xml will be converted into a json array of static release objects 
 which is then further converted into a new updated section of opnsense: kea-dhcp 
-static lease delimited by <reservations>. For every device in kea-dhcp, the python script will generates a
-new radndom uuid for every device and re-use the subnet uuid.
+static lease delimited by <reservations>. For every device in kea-dhcp, 
+the python script will generate a new random uuid for every device and re-uses 
+the user's <subnet> uuid.
 
 See below:
 
@@ -26,24 +41,21 @@ See below:
        </reservations>
 	   
 	   
-=====	   
-Test Run with sample pfsense xml data
-In the same directory run gh_static_lease4.py with your gh_pfsense_isc_dhcp_data.xml present.
+Sample pfsense xml Data Test Run:	   
+Copy gh_static_lease4.py and gh_pfsense_isc_dhcp_data.xml into the same directory.
 
 >>  python3 gh_static_lease4.py
 
 creates 
 gh_kea_dhcp_data.json
 gh_static_lease3_converted_to_opnsense.xml
-=======
 
 
-In opnsense GUI, create and add a client in the kea-dhcp reservations and apply save.
-You have just created an uuid for the subnet. Save the config backup,open the config
-and identify yout <subnet> uuid  </subnet>. 
-Edit gh_static_lease4.py and add ur new subnet uuid. 
+Adding the patch to the opnsense config file:
+In opnsense GUI, create and add a client in the kea-dhcp reservation tab and apply save.
+You have just created an uuid for the subnet. Save the config backup, open the config
+and identify your <subnet> uuid  </subnet>. 
+Edit the gh_static_lease4.py and add ur new subnet uuid. 
 In the same directory  run gh_static_lease4.py with your gh_pfsense_isc_dhcp_data.xml present.
-The *.py script will generates a new kea-dhcp format - see the newlly created  gh_static_lease3_converted_to_opnsense.xml
-
-To complete the opnsense config file, cut and paste the entire section
-into the targetd opnsense config file delimited by <reservations>.
+The *.py script will generates a new kea-dhcp format - see the newly created  .xml in
+gh_static_lease3_converted_to_opnsense.xml.
