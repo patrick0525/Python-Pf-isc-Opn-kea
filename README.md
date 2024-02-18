@@ -1,5 +1,5 @@
 # Python-Pf-isc-Opn-kea
-.xml conversion of pfsense isc-dhcp static lease device info into opnsense kea-dhcp static lease device info.
+An .xml conversion of pfsense isc-dhcp static lease device info to opnsense kea-dhcp reservation info.
 
 
 pfsense xml -> array of [json obj] -> opnsense xml
